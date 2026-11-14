@@ -146,18 +146,3 @@ if (contactForm && formNote) {
 
 const year = document.querySelector("#year");
 if (year) year.textContent = String(new Date().getFullYear());
-
-const modelViewer = document.querySelector("#sword-viewer");
-const modelViewerStatus = document.querySelector("#sword-viewer-status");
-const modelViewerModule = document.querySelector("[data-model-viewer]");
-const showModelViewerError = () => {
-  if (!modelViewer || !modelViewerStatus || modelViewer.dataset.state !== "loading") return;
-  modelViewer.dataset.state = "error";
-  modelViewerStatus.dataset.state = "error";
-  modelViewerStatus.textContent = "3D preview unavailable. Open this portfolio from a web server and check your connection.";
-};
-
-if (modelViewer && modelViewerStatus && modelViewerModule) {
-  modelViewerModule.addEventListener("error", showModelViewerError);
-  window.setTimeout(showModelViewerError, 15000);
-}

@@ -10,16 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
-        }
-      }
-    </script>
     <script src="script.js" defer></script>
-    <script type="module" src="model-viewer.js" data-model-viewer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -106,24 +97,11 @@
               </p>
               <a class="text-link" href="#contact">Get to know me <span aria-hidden="true">→</span></a>
             </article>
-            <div class="showcase-card glass-card reveal">
-              <div class="showcase-card__top">
-                <span class="eyebrow">FEATURED 3D MODEL</span>
-                <span class="status-pill"><i></i> Drag to explore</span>
+            <article class="profile-card glass-card reveal">
+              <div class="profile-card__portrait">
+                <img src="assets/images/MARIEL.png" alt="Portrait of Mariel Joyce Polohanan" loading="lazy" width="294" height="392">
               </div>
-              <div class="model-viewer" id="sword-viewer" data-state="loading" role="group" aria-label="Interactive 3D sword model viewer">
-                <canvas class="model-viewer__canvas" aria-label="3D sword model. Drag to rotate; scroll or pinch to zoom." role="img"></canvas>
-                <p class="model-viewer__status" id="sword-viewer-status" role="status" aria-live="polite">Loading SWORD.glb…</p>
-              </div>
-              <div class="showcase-card__caption">
-                <span>01</span>
-                <div>
-                  <strong>Sword / Blender study.</strong>
-                  <p>An interactive preview of the featured Blender model.</p>
-                </div>
-                <span class="caption-arrow" aria-hidden="true">↗</span>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -217,8 +195,8 @@
               </div>
             </article>
             
-            <article class="project-card glass-card reveal" data-sword-modal-card>
-              <a class="project-card__image project-card__image--two" href="assets/models/SWORD.glb" data-sword-modal aria-label="View 3D Sword Model" aria-haspopup="dialog" aria-controls="sword-modal">
+            <article class="project-card glass-card reveal">
+              <a class="project-card__image project-card__image--two" href="assets/models/SWORD.glb" download="SWORD.glb" aria-label="Download 3D Sword Model">
                 <img src="assets/images/SWORD.png" alt="3D Sword Model created in Blender" loading="lazy">
                 <span class="project-card__image-label">02 / 3D EXPERIMENT</span>
                 <span class="project-card__image-icon" aria-hidden="true">↗</span>
@@ -239,7 +217,7 @@
                     <span>Modeling</span>
                     <span>Lighting</span>
                   </div>
-                  <a href="assets/models/SWORD.glb" class="project-link" data-sword-modal aria-haspopup="dialog" aria-controls="sword-modal">View Model <span aria-hidden="true">↗</span></a>
+                  <a href="assets/models/SWORD.glb" class="project-link" download="SWORD.glb">Download Model <span aria-hidden="true">↓</span></a>
                 </div>
               </div>
             </article>
@@ -304,28 +282,5 @@
       </div>
     </footer>
 
-    <dialog class="sword-modal" id="sword-modal" aria-labelledby="sword-modal-title">
-      <section class="sword-modal__panel">
-        <header class="sword-modal__header">
-          <div>
-            <p class="eyebrow"><span class="eyebrow__line"></span> INTERACTIVE 3D MODEL</p>
-            <h2 id="sword-modal-title">Fantasy Sword <span>/ Blender</span></h2>
-          </div>
-          <button class="sword-modal__close" type="button" aria-label="Close model viewer" autofocus>×</button>
-        </header>
-        <div class="sword-modal__viewport" id="sword-modal-viewport" aria-label="Interactive sword model viewer">
-          <div class="sword-modal__loading" id="sword-modal-loading" role="status" aria-live="polite">
-            <span class="sword-modal__spinner" aria-hidden="true"></span>
-            <span>Loading sword model…</span>
-          </div>
-        </div>
-        <footer class="sword-modal__footer">
-          <span><i></i> DRAG TO ROTATE</span>
-          <span>SCROLL OR PINCH TO ZOOM</span>
-          <span>ESC TO CLOSE</span>
-        </footer>
-      </section>
-    </dialog>
-    <script type="module" src="sword-modal.js"></script>
   </body>
 </html>
